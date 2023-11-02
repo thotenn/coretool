@@ -1,0 +1,81 @@
+body {
+    font-weight: 200;
+    font-size: 14px;
+}
+
+.headerdate {
+    font-size: 15px;
+    color: #000000;
+}
+
+.titlereport {
+    bottom: 50px;
+    font-size: 20px;
+    text-align: center;
+    color: #007cae;
+}
+
+.logoinfo {
+    font-size: 25px;
+    color: #000000;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: 100;
+    /* text-align: right;*/
+    padding: 10px 20px 0px 20px;
+}
+
+.headerdetails {
+    display: block;
+    font-size: 12px;
+    padding: 0px 20px 0px 20px;
+    text-align: left !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 15px;
+    color: #333333;
+    background-color: #ffffff;
+}
+
+.detail_date {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.details {
+    font-size: 12px;
+    padding: 10px 20px 0px 20px;
+    text-align: left !important;
+    /*margin-left: 40%;*/
+}
+
+.without_details {
+    font-size: 14px;
+    padding: 10px 20px 0px 20px;
+    text-align: left !important;
+    font-weight: bold;
+    /*margin-left: 40%;*/
+}
+
+.hrItem {
+    margin-top: 5px;
+    border-top: 1px solid black;
+    /* Set the hr color */
+    color: #333; /* old IE */
+    background-color: rgb(0, 0, 0); /* Modern Browsers */
+}
+
+.footer_table {
+    margin: 0;
+    font-size: 0.75em;
+    text-align: right;
+}
+
+.footer_table .pre-colon {
+    text-transform: uppercase;
+}
+
+.footer_table .post-colon {
+    font-weight: bold;
+}

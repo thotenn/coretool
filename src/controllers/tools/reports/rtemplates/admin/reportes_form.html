@@ -1,0 +1,99 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static admin_list %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'admin/js/vendor/jquery/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'admin/js/jquery.init.js' %}"></script>
+    <script>
+        function alCargarPDF() {
+            document.getElementById("loading-pdf-div").style.display = "none";
+        }
+
+        function sePuedeVisualizarPDF() {
+            botonVisualizarPDF = document.getElementById('boton-Generar-y-visualizar');
+            botonVisualizarPDF.disabled = false;
+        }
+
+        function noSePuedeVisualizarPDF() {
+            botonVisualizarPDF = document.getElementById('boton-Generar-y-visualizar');
+            botonVisualizarPDF.classList.remove("default");
+            botonVisualizarPDF.disabled = true;
+            botonVisualizarPDF.value = botonVisualizarPDF.value + ' (no disponible)';
+            botonDescargarPDF = document.getElementById('boton-Generar-y-descargar');
+            botonDescargarPDF.classList.add("default");
+        }
+    </script>
+{% endblock %}
+
+{% block content %}
+    {% if form.non_field_errors %}
+        <p class="errornote">
+            {% if errors|length == 1 %}{% trans "Please correct the error below." %}{% else %}
+                {% trans "Please correct the errors below." %}{% endif %}
+        </p>
+        {{ form.non_field_errors }}
+    {% endif %}
+
+    <div id="content-main">
+        <form method="POST">
+            {% csrf_token %}
+            <div style="background-color: white;">
+                <fieldset class="module aligned module_0">
+                    <div class="form-row">
+                        <h1 style="margin:0;">{{ title }}</h1>
+                    </div>
+                    {% if form.grupos is None %}
+                        {% for field in form %}
+                            {{ field.errors }}
+                            <div class="form-row">
+                                <label>{{ field.label }}</label>
+                                {{ field }}
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        {% for grupo in form.grupos %}
+                            <div class="form-row">
+                                {% for field in form %}
+                                    {% if field.name in grupo %}
+                                        <div class="field-box">
+                                            {{ field.errors }}
+                                            <div class="related-widget-wrapper">
+                                                <label>{{ field.label }}</label>
+                                                {{ field }}
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </fieldset>
+            </div>
+            <div class="submit-row">
+                <input id='boton-Generar-y-visualizar' type="submit" class="default" value="Generar y visualizar"
+                       name="_visualizar">
+                <input id='boton-Generar-y-descargar' type="submit" value="Generar y descargar en PDF"
+                       name="_descargar">
+            </div>
+
+        {# TODO: Ver si podemos mudar minimal.pdf a core.../reports/assets/ #}
+            <object width="0px" height="0px" onload='sePuedeVisualizarPDF()' onerror='noSePuedeVisualizarPDF()'
+                    type="application/pdf" data="{% static 'admin/assets/pdf/minimal.pdf' %}"></object>
+
+            <div id="pdf-div">
+                {% if generar_pdf_url is not None %}
+                    <div id="loading-pdf-div">
+                        Cargando reporte...
+                    </div>
+                    <object id="pdf-object" style="display:block;" onerror="alCargarPDF()" onload="alCargarPDF()"
+                            type="application/pdf" data="{{ generar_pdf_url }}" width='100%' height="700">
+                        <div class="errornote">
+                            Ha ocurrido un error durante la generación del reporte.
+                        </div>
+                    </object>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+{% endblock %}

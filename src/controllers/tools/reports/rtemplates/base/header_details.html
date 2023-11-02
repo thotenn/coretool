@@ -1,0 +1,6 @@
+<div class='headerdetails'>
+    <div class="detail_date">Fecha: {{ header.date }}</div>
+    {% for key, value in header.header_details.items %}
+        {{ key }}: {{ value }}<br>
+    {% endfor %}
+</div>

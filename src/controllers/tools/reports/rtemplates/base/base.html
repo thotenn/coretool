@@ -1,0 +1,31 @@
+{% spaceless %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>{% block title %}  {% endblock %}</title>
+    {% block head %}
+        {{ css_base.css|safe }}
+        <style type="text/css">
+            {% include 'rtemplates/assets/css/standard.css' %}
+        </style>
+        <style type="text/css">
+            {% include 'rtemplates/assets/css/table.css' %}
+        </style>
+    {% endblock %}
+</head>
+<body>
+{% block header %}
+    {% include 'rtemplates/base/header.html' %}
+{% endblock %}
+{% block footer %}
+    {% include 'rtemplates/base/footer.html' %}
+{% endblock %}
+{% block header_details %}
+    {% include 'rtemplates/base/header_details.html' %}
+{% endblock %}
+{% block detail %}
+    {% include 'rtemplates/base/detail.html' %}
+{% endblock %}
+</body>
+</html>
+{% endspaceless %}

@@ -1,0 +1,34 @@
+{% if empty_details %}
+    <div class='without_details'>
+        Sin datos que mostrar.
+    </div>
+{% else %}
+    {% for detail in details %}
+        {% if detail.details %}
+            <div class="table_title">
+                {{ detail.table_title }}
+            </div>
+            <div class='rg-container'>
+                <table class='rg-table' summary='Hed'>
+                    <thead>
+                    <tr>
+                        {% for item in detail.titles %}
+                            <th class='number '>{{ item }}</th>
+                        {% endfor %}
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in detail.details %}
+                        <tr class=''>
+                            {% for item in row %}
+                                <td class='text '>{{ item }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <br><br><br>
+        {% endif %}
+    {% endfor %}
+{% endif %}

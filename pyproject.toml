@@ -1,0 +1,19 @@
+[project]
+name = "coretools"
+version = "0.0.1"
+authors = [
+  { name="thotenn", email="joseenriquegaray@hotmail.com" },
+]
+description = "Multi tools for every"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+keywords = ['coretools', 'core', 'tools']
+
+[project.urls]
+"Homepage" = "https://github.com/thotenn/core"
+"Bug Tracker" = "https://github.com/thotenn/core/issues"
