@@ -1,19 +1,25 @@
+[build-system]
+requires = ["django", "djangorestframework", "pillow", "python-barcode", "safedelete", "xhtml2pdf", "reportlab"]
+
 [project]
-name = "coretools"
+name = "coretool"
 version = "0.0.1"
 authors = [
   { name="thotenn", email="joseenriquegaray@hotmail.com" },
 ]
+license = { file = "LICENSE" }
 description = "Multi tools for every"
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
+    "License :: OSI Approved :: MIT License"
 ]
 keywords = ['coretools', 'core', 'tools']
 
+    [project.optional-dependencies]
+    build = ['build', 'twine']
+
 [project.urls]
-"Homepage" = "https://github.com/thotenn/core"
-"Bug Tracker" = "https://github.com/thotenn/core/issues"
+"Homepage" = "https://github.com/thotenn/coretools"
+"Bug Tracker" = "https://github.com/thotenn/coretools/issues"
