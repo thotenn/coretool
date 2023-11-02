@@ -3,7 +3,7 @@ requires = ["django", "djangorestframework", "pillow", "python-barcode", "safede
 
 [project]
 name = "coretool"
-version = "0.0.1"
+version = "0.0.2"
 authors = [
   { name="thotenn", email="joseenriquegaray@hotmail.com" },
 ]
