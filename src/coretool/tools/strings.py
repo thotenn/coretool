@@ -86,6 +86,7 @@ def strings_normalize_str(value):
     """
     return unicodedata.normalize('NFKD', value).encode('ascii', 'ignore').decode("utf-8")
 
+
 def strings_normalize_slower_str(value):
     """
     Elimina todas las ñ, vocales con acentos, etc
