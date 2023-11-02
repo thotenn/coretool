@@ -23,8 +23,6 @@ LISTA_APPS = [
 
 HISTORICAL_PREFIJO = 'Historical'
 
-USER_DEFAULT = User.objects.first()
-
 OMITIR_COLS = [
     'id',
     'createdat',
@@ -61,6 +59,7 @@ class Command(BaseCommand):
         # TODO: Verificar que los pks no se repitan
         try:
             db_2 = 'dev'
+            USER_DEFAULT = User.objects.first()
 
             for appname in LISTA_APPS:
                 print('Trabajando en la aplicacion ', appname)
