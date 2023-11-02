@@ -2,8 +2,6 @@ from ..base import BaseModelAdmin, BaseLogModelAdmin
 from ..models.cronjobs import CronJobCab, CronJob, CronJobLog, CronJobLogError
 
 
-
-
 class CronJobCabAdmin(BaseModelAdmin):
     class Meta:
         model = CronJobCab

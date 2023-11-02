@@ -1,7 +1,7 @@
 import datetime as dt
 from django.utils import timezone
 from .tools.classes import tools_classes_import_from_str as t_import
-from ..models import CronJobCab, CronJob, CronJobLog as Clog, CronJobLogError as Clogerr
+from ..coretool_app.models import CronJobCab, CronJob, CronJobLog as Clog, CronJobLogError as Clogerr
 from .cronjobsf.pathjobs import PJOBS
 from .cronjobsf.baseclass import Crontab
 from .errors import Error

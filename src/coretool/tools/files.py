@@ -32,6 +32,7 @@ class CsvExportMixin:
 
     export_as_csv.short_description = "Exportar a CSV"
 
+
 class CsvImport(admin.ModelAdmin):
     #AVISO para que esto funcione, un modelo debera extenderse de esta clase
     #lo cual no es muy recomendable, habra que hacer una clase interfaz en la cual
@@ -74,6 +75,7 @@ class CsvImport(admin.ModelAdmin):
         return render(
             request, "templates/admin/forms/csv_form.html", payload
         )
+
 
 def empaquetar_zip(filenames, zip_subdir):
     """Genera un archivo ZIP dada una lista de las

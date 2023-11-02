@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 
+
 def ZipResponse(zip_file, zip_filename):
     """Genera una respuesta HTTP con el archivo zip.
 

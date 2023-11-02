@@ -13,6 +13,7 @@ from reportlab.lib.units import mm, inch
 PAGESIZE = (140 * mm, 216 * mm)
 BASE_MARGIN = 5 * mm
 
+
 class ReportlabController:
     def __init__(self, filename: str = 'file'):
         self.filename = filename

@@ -8,9 +8,9 @@ from django.db.models.fields.files import ImageField
 from django.db.models.fields import CharField, BooleanField, FloatField, IntegerField
 from django.forms.models import model_to_dict
 
-from ..tools.images import image_get_content_file_from_bytearray
-from ..tools.objects import tools_objects_getattributes_values
-from ..tools.strings import strings_generate_token_urlsafe
+from .. import image_get_content_file_from_bytearray
+# from .. import tools_objects_getattributes_values
+from .. import strings_generate_token_urlsafe
 
 
 # TODO: tambien necesitamos procesar los datos de salida, es decir, no retornar solo los pk, que el usuario decida,
