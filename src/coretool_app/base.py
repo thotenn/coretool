@@ -17,7 +17,7 @@ from safedelete.queryset import SafeDeleteQueryset
 from django.contrib import admin, messages
 from django.http import HttpResponseRedirect
 
-from ..coretool.addedbyuser.fields import UserForeignKey
+from .controllers.addedbyuser.fields import UserForeignKey
 # libs para ComplexModel
 # from .checks.complexmodelcheck import check_database_table, check_fixture
 from .fields import ReservableAutoField

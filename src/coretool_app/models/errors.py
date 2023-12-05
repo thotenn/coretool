@@ -1,6 +1,7 @@
 from django.db import models
 from ..base import BaseModel, ComplexModel
 from ..controllers.pstruct import pstruct_get_full_tuple as pstruct_full
+from ..pstruct import PSTRUCT
 
 
 class ErrorEsperado(ComplexModel):
@@ -14,7 +15,7 @@ class ErrorEsperado(ComplexModel):
         ('E', 'Error Esperado'),
         ('NE', 'Error no Esperado')
     ]
-    VIEWSCODES = pstruct_full()
+    VIEWSCODES = pstruct_full(PSTRUCT)
     tipoerror = models.CharField('Tipo de error', max_length=2, null=False, blank=False, choices=TIPOERROR)
     viewcode = models.CharField('Codigo de View', max_length=50, null=False, blank=False, choices=VIEWSCODES)
     solucion = models.TextField('Detalle de Solucion', null=True, blank=True)
