@@ -19,3 +19,5 @@ from .coretool import (GenView, api_generate_serializer_class, generate_gen_view
                        strings_seeker_iregex_and, strings_seeker_iregex_or, validator_no_espacios,
                        validators_throw_error_basic, ApiBasicController, ApiRestBaseController,
                        ApiRestAbstractController, ApiRestStandard, PROCESS_TYPES, CrudBasic)
+from .coretool_app import (BaseModel, BasicModel, ComplexModel, BaseModelAdmin, BaseLogModelAdmin,
+                           BaseLogTabModelAdmin)

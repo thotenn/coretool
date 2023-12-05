@@ -4,7 +4,8 @@
 
 from django import forms
 from django.contrib.admin.views.main import ChangeList
-from django.db import IntegrityError, models
+# from django.db import IntegrityError, models
+from django.db import models
 from django.conf import settings
 
 from safedelete.models import SafeDeleteModel, SOFT_DELETE_CASCADE
@@ -16,10 +17,9 @@ from safedelete.queryset import SafeDeleteQueryset
 from django.contrib import admin, messages
 from django.http import HttpResponseRedirect
 
-from .controllers.addedbyuser.fields import UserForeignKey
-
+from ..coretool.addedbyuser.fields import UserForeignKey
 # libs para ComplexModel
-from .checks.complexmodelcheck import check_database_table, check_fixture
+# from .checks.complexmodelcheck import check_database_table, check_fixture
 from .fields import ReservableAutoField
 
 ###
