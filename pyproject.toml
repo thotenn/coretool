@@ -1,5 +1,6 @@
 [build-system]
-requires = ["django", "djangorestframework", "pillow", "python-barcode", "django-safedelete", "xhtml2pdf", "reportlab", "barcode", "psycopg2-binary"]
+requires = ["django", "djangorestframework", "pillow", "python-barcode", "django-safedelete", "xhtml2pdf", "reportlab", "barcode", "psycopg2-binary", "setuptools"]
+build-backend = 'setuptools.build_meta'
 
 [project]
 name = "coretool"
